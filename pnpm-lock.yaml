@@ -17,9 +17,9 @@ specifiers:
   lodash-es: ^4.17.21
   pinia: ^2.0.16
   postcss: ^8.4.14
-  preset-uni: ^0.1.3
   typescript: ^4.7.4
   unocss: ^0.44.3
+  unocss-preset-uni: ^0.1.4
   unplugin-auto-import: ^0.9.3
   vite: ^2.9.10
   vue: ^3.2.37
@@ -46,9 +46,9 @@ devDependencies:
   '@types/node': 18.0.6
   eslint: 8.20.0
   postcss: 8.4.14
-  preset-uni: 0.1.3
   typescript: 4.7.4
   unocss: 0.44.3_vite@2.9.14
+  unocss-preset-uni: 0.1.4
   unplugin-auto-import: 0.9.3_vite@2.9.14
   vite: 2.9.14
 
@@ -3755,16 +3755,6 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /preset-uni/0.1.3:
-    resolution: {integrity: sha512-8njzOLRWng0NOxo95c+aj9w7Wo70GluYaMM0108ejLsOIdLnThg9DLvj9948i3r0X+E+qTZUSUuS25MaMPzvjQ==}
-    dependencies:
-      '@unocss/core': 0.44.2
-      '@unocss/preset-mini': 0.44.2
-      '@unocss/preset-wind': 0.44.2
-      '@vue/compiler-sfc': 3.2.37
-      magic-string: 0.26.2
-    dev: true
-
   /prop-types/15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
     dependencies:
@@ -4300,6 +4290,16 @@ packages:
   /universalify/2.0.0:
     resolution: {integrity: sha512-hAZsKq7Yy11Zu1DE0OzWjw7nnLZmJZYTDZZyEFHZdUhV8FkH5MCfoU1XMaxXovpyW5nq5scPqq0ZDP9Zyl04oQ==}
     engines: {node: '>= 10.0.0'}
+
+  /unocss-preset-uni/0.1.4:
+    resolution: {integrity: sha512-Wm7NVvaEjcrB8j0lILNng2MdUUA7t+eTFoATMBNWzfFbfzHrjzmPSZDENEEbnVOJ7AK5WnyaK+q4LzWOn/YTmg==}
+    dependencies:
+      '@unocss/core': 0.44.2
+      '@unocss/preset-mini': 0.44.2
+      '@unocss/preset-wind': 0.44.2
+      '@vue/compiler-sfc': 3.2.37
+      magic-string: 0.26.2
+    dev: true
 
   /unocss/0.44.3_vite@2.9.14:
     resolution: {integrity: sha512-ZJMKQewk6Goywhx231Mi7YqDL7BMzxkJp1sDxXJ0+rcTvv3H0CND7yshnsJHQDfsRWmZxrmvWzezu082/EAlaQ==}

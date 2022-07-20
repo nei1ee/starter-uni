@@ -6,8 +6,8 @@ import {
   transformerVariantGroup,
 } from 'unocss'
 
-// https://github.com/zguolee/preset-uni
-import { presetUni } from 'preset-uni'
+// https://github.com/zguolee/unocss-preset-uni
+import { presetUni } from 'unocss-preset-uni'
 
 export default defineConfig({
   shortcuts: {
