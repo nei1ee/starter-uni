@@ -1,0 +1,20 @@
+{
+  "globalStyle": {
+    "backgroundColor": "@bgColor",
+    "backgroundColorBottom": "@bgColorBottom",
+    "backgroundColorTop": "@bgColorTop",
+    "backgroundTextStyle": "@bgTxtStyle",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTextStyle": "@navTxtStyle",
+    "navigationBarTitleText": "Starter-Uni",
+    "navigationStyle": "custom"
+  },
+  "pages": [
+    {
+      "path": "pages/splash/splash"
+    },
+    {
+      "path": "pages/dashboard/dashboard"
+    }
+  ]
+}
