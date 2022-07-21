@@ -2,22 +2,28 @@
   "compilerOptions": {
     "baseUrl": ".",
     "esModuleInterop": true,
+    "isolatedModules": true,
     "jsx": "preserve",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noImplicitAny": false,
     "paths": {
-      "~/*": ["src/*"],
-      "#/*": ["types/*"]
+      "~/*": [
+        "src/*"
+      ]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "esnext",
-    "types": ["@dcloudio/types", "vite/client"],
-    "useDefineForClassFields": true
-  },
-  "exclude": ["node_modules", "dist"]
+    "types": [
+      "@dcloudio/types",
+      "vite/client"
+    ]
+  }
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { UNotifyOptions, UNotifyType } from './types'
 
-const appStore = useAppStore()
+const { customBarHeight } = storeToRefs(useAppStore())
 
 const timer = ref<number | undefined>(undefined)
 const show = ref(false)
@@ -38,7 +38,7 @@ const bgColor = {
   <div
     class="flex h-8 text-white w-full py-1 px-2 transition-all z-100 duration-500 justify-center items-center fixed"
     :class="bgColor[notifyType]"
-    :style="{ top: show ? `${appStore.customBarHeight}px` : '-100%' }"
+    :style="{ top: show ? `${customBarHeight}px` : '-100%' }"
   >
     {{ message }}
   </div>

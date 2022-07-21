@@ -9,16 +9,16 @@ interface MenuButtonBoundingClientRect {
   bottom: number
 }
 
-const defaultBounding = { width: 87, height: 32, left: 281, top: 48, right: 368, bottom: 80 }
-
 export const useAppStore = defineStore(
   'app',
   () => {
     const darkMode = ref(false)
-    const statusBarHeight = ref(44)
-    const menuButtonBounding = ref<MenuButtonBoundingClientRect>(defaultBounding)
-    const customBarHeight = computed(() =>
-      menuButtonBounding.value.bottom + menuButtonBounding.value.top - statusBarHeight.value)
+    const statusBarHeight = ref(0)
+    const menuButtonBounding = ref<MenuButtonBoundingClientRect>()
+    const customBarHeight = computed(
+      () => !menuButtonBounding.value
+        ? 0
+        : menuButtonBounding.value.bottom + menuButtonBounding.value.top - statusBarHeight.value)
 
     return {
       darkMode,

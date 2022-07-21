@@ -1,46 +1,46 @@
 <script setup lang="ts">
 import type { UNotifyOptions } from '../UNotify/types'
 
-const appStore = useAppStore()
-const pageStore = usePageStore()
+const { darkMode, customBarHeight, statusBarHeight } = storeToRefs(useAppStore())
+const { pageReset } = usePageStore()
+const {
+  showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef,
+} = storeToRefs(usePageStore())
 
 const handleNavigateBack = () => uni.navigateBack({})
 
 const notifyRef = ref<{ handleShowNotify: (options: UNotifyOptions) => {} }>()
 
-onMounted(() => pageStore.notifyRef = notifyRef.value)
-onShow(() => pageStore.notifyRef = notifyRef.value)
-onHide(() => pageStore.pageReset())
-onUnload(() => pageStore.pageReset())
+onMounted(() => _notifyRef.value = notifyRef.value)
+onShow(() => _notifyRef.value = notifyRef.value)
+onHide(() => pageReset())
+onUnload(() => pageReset())
 </script>
 
 <template>
-  <div class="font-mono color-base relative text-base" :class="appStore.darkMode ? 'dark' : ''">
+  <div class="font-mono color-base relative text-base" :class="darkMode ? 'dark' : ''">
     <div class="bg-base-soft pb-safe color-base">
       <!-- custom navigation bar -->
       <div
-        v-if="pageStore.showNavBar"
-        class="bg-light-blue-500 text-white w-full top-0 z-200 fixed dark:bg-light-blue-600"
-        :style="{ height: `${appStore.customBarHeight}px` }"
+        v-if="showNavBar" class="bg-light-blue-500 text-white w-full top-0 z-200 fixed dark:bg-light-blue-600"
+        :style="{ height: `${customBarHeight}px` }"
       >
-        <div
-          :style="{ 'padding-top': `${appStore.statusBarHeight}px`, 'height': `${appStore.customBarHeight - appStore.statusBarHeight}px` }"
-        >
+        <div :style="{ 'padding-top': `${statusBarHeight}px`, 'height': `${customBarHeight - statusBarHeight}px` }">
           <div class="h-full text-center px-6 relative">
             <div
-              v-if="pageStore.showBackAction || pageStore.showCustomAction"
+              v-if="showBackAction || showCustomAction"
               class="flex h-full text-xl left-4 absolute justify-center items-center"
             >
               <slot name="navAction">
                 <div
-                  v-if="pageStore.showBackAction && !pageStore.showCustomAction" class="i-carbon-chevron-left"
+                  v-if="showBackAction && !showCustomAction" class="i-carbon-chevron-left"
                   @click="handleNavigateBack"
                 />
               </slot>
             </div>
             <div class="flex h-full text-lg justify-center items-center">
               <slot name="navContent">
-                {{ pageStore.pageTitle }}
+                {{ pageTitle }}
               </slot>
             </div>
           </div>
@@ -50,7 +50,7 @@ onUnload(() => pageStore.pageReset())
       <!-- page container -->
       <div
         class="overflow-auto"
-        :style="{ 'height': `calc(100vh - ${appStore.customBarHeight}px)`, 'padding-top': `${appStore.customBarHeight}px` }"
+        :style="{ 'height': `calc(100vh - ${customBarHeight}px)`, 'padding-top': `${customBarHeight}px` }"
       >
         <slot />
       </div>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  type: 'default' | 'success' | 'danger' | 'warning' | 'primary'
+  type?: 'default' | 'success' | 'danger' | 'warning' | 'primary'
   bg?: string
   icon?: string
 }

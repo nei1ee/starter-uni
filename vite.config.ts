@@ -2,8 +2,8 @@ import path from 'path'
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import Unocss from 'unocss/vite'
-import AutoImport from 'unplugin-auto-import/vite'
 import { UnoCSSToUni } from 'unocss-preset-uni/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +11,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
-      '#/': `${path.resolve(__dirname, 'types')}/`,
     },
   },
   plugins: [

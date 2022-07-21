@@ -10,11 +10,7 @@
     "navigationStyle": "custom"
   },
   "pages": [
-    {
-      "path": "pages/splash/splash"
-    },
-    {
-      "path": "pages/dashboard/dashboard"
-    }
+    { "path": "pages/splash/splash" },
+    { "path": "pages/dashboard/dashboard" }
   ]
 }
