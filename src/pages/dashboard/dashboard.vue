@@ -9,7 +9,7 @@ onShow(() => {
 </script>
 
 <template>
-  <BasePage>
+  <UBasePage>
     <div class="p-6">
       <UButton type="danger" @click="pageStore.showNotify({ type: 'danger', msg: 'danger' })">
         Show Danger Notify
@@ -21,7 +21,15 @@ onShow(() => {
         Custom Button
       </UButton>
     </div>
-  </BasePage>
+    <div class="bg-base-second m-6 rounded-lg p-6 border-base">
+      <div class="text-center">
+        abcdefghijklmnopqrstuvwxyz
+        <div class="color-base-second">
+          1234567890
+        </div>
+      </div>
+    </div>
+  </UBasePage>
 </template>
 
 <style scoped>

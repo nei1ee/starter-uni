@@ -8,16 +8,16 @@ onShow(() => {
 })
 
 setTimeout(() => {
-  uni.navigateTo({
+  uni.redirectTo({
     url: '/pages/dashboard/dashboard',
   })
 }, 500)
 </script>
 
 <template>
-  <BasePage>
-    <div class="loader dark:bg-#121212" />
-  </BasePage>
+  <UBasePage>
+    <div class="loader" />
+  </UBasePage>
 </template>
 
 <style>
