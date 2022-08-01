@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const pageStore = usePageStore()
+const { setPageConfig, showNotify, showToast } = usePageStore()
 
 onShow(() => {
-  pageStore.setPageConfig({
+  setPageConfig({
     pageTitle: 'Dashboard',
   })
 })
@@ -11,13 +11,13 @@ onShow(() => {
 <template>
   <UBasePage>
     <div class="p-6">
-      <UButton type="danger" @click="pageStore.showNotify({ type: 'danger', msg: 'danger' })">
-        Show Danger Notify
+      <UButton type="error" @click="showNotify({ type: 'error', message: 'error' })">
+        Show error Notify
       </UButton>
-      <UButton type="primary" @click="pageStore.showNotify({ type: 'primary', msg: 'primary' })">
+      <UButton type="primary" @click="showNotify({ type: 'primary', message: 'primary' })">
         Show Primary Notify
       </UButton>
-      <UButton bg="bg-orange" icon="i-carbon-notification" @click="pageStore.showNotify({ type: 'success', msg: 'success' })">
+      <UButton bg="bg-orange" icon="i-carbon-notification" @click="showNotify({ type: 'success', message: 'success' })">
         Custom Button
       </UButton>
     </div>
@@ -30,7 +30,7 @@ onShow(() => {
       </div>
     </div>
     <div class="p-6">
-      <UButton type="default" @click="pageStore.showToast({ type: 'default', msg: 'danger' })">
+      <UButton type="default" @click="showToast({ type: 'default', message: 'error' })">
         Show Toast
       </UButton>
     </div>

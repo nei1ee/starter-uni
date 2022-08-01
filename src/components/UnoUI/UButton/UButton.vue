@@ -1,6 +1,6 @@
 <script setup lang="ts">
 interface Props {
-  type?: 'default' | 'success' | 'danger' | 'warning' | 'primary'
+  type?: 'default' | 'success' | 'error' | 'warning' | 'primary'
   bg?: string
   icon?: string
   disabled?: boolean
@@ -20,7 +20,7 @@ const handleTap = () => emit('click')
 const bgColor = {
   default: 'bg-gray-5',
   success: 'bg-green-5',
-  danger: 'bg-red-5',
+  error: 'bg-red-5',
   warning: 'bg-orange-5',
   primary: 'bg-blue-5',
 }

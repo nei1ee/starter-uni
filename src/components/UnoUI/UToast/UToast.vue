@@ -9,11 +9,11 @@ const notifyType = ref<UToastType>('default')
 const message = ref('')
 
 const handleShowToast = (options: UToastOptions) => {
-  const { type = 'default', msg = 'Unable to connect to the server.', duration = 2000 } = options
+  const { type = 'default', message = 'Unable to connect to the server.', duration = 2000 } = options
   clearTimeout(timer.value)
   show.value = true
   notifyType.value = type
-  message.value = msg
+  message.value = message
   timer.value = setTimeout(() => {
     show.value = false
     clearTimeout(timer.value)
@@ -28,7 +28,7 @@ defineExpose({
 const ToastClass = {
   default: 'bg-gray-5 border-gray-2',
   success: 'bg-green-5 border-green-3',
-  danger: 'bg-red-5 border-red-3',
+  error: 'bg-red-5 border-red-3',
   warning: 'bg-orange-5 border-orange-3',
   primary: 'bg-blue-5 border-blue-3',
 }

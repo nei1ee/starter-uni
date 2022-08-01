@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const pageStore = usePageStore()
+const { setPageConfig } = usePageStore()
 
 onShow(() => {
-  pageStore.setPageConfig({
+  setPageConfig({
     showNavBar: false,
   })
 })
