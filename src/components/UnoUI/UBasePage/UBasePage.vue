@@ -1,23 +1,31 @@
 <script setup lang="ts">
 import type { UNotifyOptions } from '../UNotify/types'
+import type { UToastOptions } from '../UToast/types'
 
 const { darkMode, customBarHeight, statusBarHeight } = storeToRefs(useAppStore())
 const { pageReset } = usePageStore()
 const {
-  showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef,
+  showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef, toastRef: _toastRef,
 } = storeToRefs(usePageStore())
 
 const handleNavigateBack = () => uni.navigateBack({})
 
 const notifyRef = ref<{ handleShowNotify: (options: UNotifyOptions) => {} }>()
+const toastRef = ref<{ handleShowToast: (options: UToastOptions) => {} }>()
 
-onMounted(() => _notifyRef.value = notifyRef.value)
-onShow(() => _notifyRef.value = notifyRef.value)
+onMounted(() => {
+  _notifyRef.value = notifyRef.value
+  _toastRef.value = toastRef.value
+})
+// onShow(() => {
+//   _notifyRef.value = notifyRef.value
+//   _toastRef.value = toastRef.value
+// })
 onHide(() => pageReset())
 </script>
 
 <template>
-  <div class="font-mono relative text-base" :class="darkMode ? 'dark' : ''">
+  <div class="relative text-base" :class="darkMode ? 'dark' : ''">
     <div class="bg-base color-base">
       <!-- custom navigation bar -->
       <div
@@ -46,6 +54,7 @@ onHide(() => pageReset())
         </div>
       </div>
       <UNotify ref="notifyRef" />
+      <UToast ref="toastRef" />
       <!-- page container -->
       <div
         class="overflow-auto"

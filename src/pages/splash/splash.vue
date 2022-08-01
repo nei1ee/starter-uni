@@ -16,21 +16,11 @@ setTimeout(() => {
 
 <template>
   <UBasePage>
-    <div class="loader" />
+    <div class="loader absolute top-72vh left-50vw rotate-165deg" />
   </UBasePage>
 </template>
 
 <style>
-  .loader {
-    position: absolute;
-  }
-
-  .loader {
-    top: 72vh;
-    left: 50vw;
-    transform: rotate(165deg);
-  }
-
   .loader:after,
   .loader:before {
     content: "";

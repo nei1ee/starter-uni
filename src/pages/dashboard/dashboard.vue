@@ -29,6 +29,11 @@ onShow(() => {
         </div>
       </div>
     </div>
+    <div class="p-6">
+      <UButton type="default" @click="pageStore.showToast({ type: 'default', msg: 'danger' })">
+        Show Toast
+      </UButton>
+    </div>
   </UBasePage>
 </template>
 

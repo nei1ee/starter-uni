@@ -18,7 +18,7 @@ const emit = defineEmits(['click'])
 const handleTap = () => emit('click')
 
 const bgColor = {
-  default: 'bg-grey-5',
+  default: 'bg-gray-5',
   success: 'bg-green-5',
   danger: 'bg-red-5',
   warning: 'bg-orange-5',
