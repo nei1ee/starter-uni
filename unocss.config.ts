@@ -1,8 +1,6 @@
 import { defineConfig, presetIcons } from 'unocss'
 
-// https://github.com/zguolee/unocss-preset-uni
-import { presetUni } from 'unocss-preset-uni'
-
+import { presetApplet, presetRemToRpx, transformerRenameClass } from 'unocss-applet'
 export default defineConfig({
   shortcuts: {
     'bg-base': 'bg-gray-100 dark:bg-dark',
@@ -13,7 +11,8 @@ export default defineConfig({
     'bg-primary': 'bg-light-blue-500 dark:bg-light-blue-600',
   },
   presets: [
-    presetUni() as any,
+    presetApplet(),
+    presetRemToRpx(),
     presetIcons({
       scale: 1.2,
       warn: true,
@@ -22,6 +21,9 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
+  ],
+  transformers: [
+    transformerRenameClass(),
   ],
   rules: [
     ['p-safe', { padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)' }],
