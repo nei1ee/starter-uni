@@ -1,6 +1,7 @@
 import { defineConfig, presetIcons } from 'unocss'
 
 import { presetApplet, presetRemToRpx, transformerRenameClass } from 'unocss-applet'
+
 export default defineConfig({
   shortcuts: {
     'bg-base': 'bg-gray-100 dark:bg-dark',

@@ -25,8 +25,8 @@ onHide(() => pageReset())
 </script>
 
 <template>
-  <div class="relative text-base" :class="darkMode ? 'dark' : ''">
-    <div class="bg-base color-base">
+  <div class="relative text-base h-100vh" :class="darkMode ? 'dark' : ''">
+    <div class="bg-base color-base h-full">
       <!-- custom navigation bar -->
       <div
         v-if="showNavBar" class="bg-primary text-white w-full top-0 z-200 fixed"

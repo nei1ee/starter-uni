@@ -9,11 +9,11 @@ const notifyType = ref<UNotifyType>('default')
 const message = ref('')
 
 const handleShowNotify = (options: UNotifyOptions) => {
-  const { type = 'default', message = 'Unable to connect to the server.', duration = 2000 } = options
+  const { type = 'default', message: _message = 'Unable to connect to the server.', duration = 2000 } = options
   clearTimeout(timer.value)
   show.value = true
   notifyType.value = type
-  message.value = message
+  message.value = _message
   timer.value = setTimeout(() => {
     show.value = false
     clearTimeout(timer.value)
