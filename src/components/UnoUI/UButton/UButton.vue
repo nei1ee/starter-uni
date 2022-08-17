@@ -28,7 +28,7 @@ const bgColor = {
 
 <template>
   <div
-    class="rounded-lg text-white flex justify-center items-center py-3 block my-3 shadow"
+    class="rounded-lg text-white flex justify-center items-center py-3 my-3 shadow"
     :class="[bg ? bg : bgColor[type], icon ? 'gap-1' : '']" hover-class="grayscale-20" :hover-stay-time="150" @tap="handleTap"
   >
     <slot name="icon">

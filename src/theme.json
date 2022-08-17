@@ -10,13 +10,13 @@
     "tabBorderStyle": "white"
   },
   "light": {
-    "bgColor": "#F3F4F6",
-    "bgColorBottom": "#F3F4F6",
-    "bgColorTop": "#F3F4F6",
+    "bgColor": "#FFFFFF",
+    "bgColorBottom": "#FFFFFF",
+    "bgColorTop": "#FFFFFF",
     "bgTxtStyle": "dark",
-    "navBgColor": "#F3F4F6",
+    "navBgColor": "#FFFFFF",
     "navTxtStyle": "white",
-    "tabBgColor": "#F3F4F6",
+    "tabBgColor": "#FFFFFF",
     "tabBorderStyle": "black"
   }
 }

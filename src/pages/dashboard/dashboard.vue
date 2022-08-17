@@ -12,7 +12,7 @@ onShow(() => {
   <UBasePage>
     <div class="p-6">
       <UButton type="error" @click="showNotify({ type: 'error', message: 'error' })">
-        Show error Notify
+        Show Error Notify
       </UButton>
       <UButton type="primary" @click="showNotify({ type: 'primary', message: 'primary' })">
         Show Primary Notify

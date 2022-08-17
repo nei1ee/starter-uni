@@ -17,19 +17,15 @@ onMounted(() => {
   _notifyRef.value = notifyRef.value
   _toastRef.value = toastRef.value
 })
-// onShow(() => {
-//   _notifyRef.value = notifyRef.value
-//   _toastRef.value = toastRef.value
-// })
 onHide(() => pageReset())
 </script>
 
 <template>
-  <div class="relative text-base h-100vh" :class="darkMode ? 'dark' : ''">
-    <div class="bg-base color-base h-full">
+  <div :class="darkMode ? 'dark' : ''">
+    <div class="bg-base color-base text-base relative">
       <!-- custom navigation bar -->
       <div
-        v-if="showNavBar" class="bg-primary text-white w-full top-0 z-200 fixed"
+        v-if="showNavBar" class="bg-primary text-white w-full top-0 z-200 fixed font-bold"
         :style="{ height: `${customBarHeight}px` }"
       >
         <div :style="{ 'padding-top': `${statusBarHeight}px`, 'height': `${customBarHeight - statusBarHeight}px` }">
