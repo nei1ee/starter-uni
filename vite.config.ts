@@ -1,4 +1,4 @@
-import path from 'path'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import uni from '@dcloudio/vite-plugin-uni'
 import UnoCSS from 'unocss/vite'
@@ -9,7 +9,7 @@ export default defineConfig({
   root: process.cwd(),
   resolve: {
     alias: {
-      '~/': `${path.resolve(__dirname, 'src')}/`,
+      '~/': `${resolve(__dirname, 'src')}/`,
     },
   },
   plugins: [

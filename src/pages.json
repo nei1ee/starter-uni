@@ -9,14 +9,14 @@
     "navigationBarTitleText": "Starter-Uni",
     "navigationStyle": "custom"
   },
+  "pages": [
+    { "path": "pages/splash/splash" },
+    { "path": "pages/dashboard/dashboard" }
+  ],
   "easycom": {
     "autoscan": true,
     "custom": {
       "^U(.*)": "~/components/UnoUI/U$1/U$1.vue"
     }
-  },
-  "pages": [
-    { "path": "pages/splash/splash" },
-    { "path": "pages/dashboard/dashboard" }
-  ]
+  }
 }
