@@ -18,8 +18,7 @@
 
 - 📥 [APIs auto importing](https://github.com/antfu/unplugin-auto-import) - use Composition API and others directly
 
-
-## Try it now!
+## Try it now
 
 ### GitHub Template
 

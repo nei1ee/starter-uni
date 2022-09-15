@@ -10,7 +10,7 @@ onShow(() => {
 
 <template>
   <UBasePage>
-    <div class="p-6">
+    <div class="p-6" flex="~ col gap2" justify-center>
       <UButton type="error" @click="showNotify({ type: 'error', message: 'error' })">
         Show Error Notify
       </UButton>
