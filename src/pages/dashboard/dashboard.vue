@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { loginApi } from '~/apis/sys/user'
+
 const { setPageConfig, showNotify, showToast } = usePageStore()
 
 onShow(() => {
@@ -6,6 +8,15 @@ onShow(() => {
     pageTitle: 'Dashboard',
   })
 })
+const handleTestApi = async () => {
+  const res = await loginApi({ username: 'admin', password: '123456' })
+  if (res.token) {
+    showNotify({
+      type: 'success',
+      message: '登录成功',
+    })
+  }
+}
 </script>
 
 <template>
@@ -17,7 +28,7 @@ onShow(() => {
       <UButton type="primary" @click="showNotify({ type: 'primary', message: 'primary' })">
         Show Primary Notify
       </UButton>
-      <UButton bg="bg-orange" icon="i-carbon-notification" @click="showNotify({ type: 'success', message: 'success' })">
+      <UButton bg="bg-orange" icon="i-carbon-notification" @click="handleTestApi">
         Custom Button
       </UButton>
     </div>
