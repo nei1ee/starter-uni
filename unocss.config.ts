@@ -13,6 +13,8 @@ import {
   transformerAttributify,
 } from 'unocss-applet'
 
+import { presetAno } from 'ano-ui'
+
 const isH5 = process.env.UNI_PLATFORM === 'h5'
 
 export default defineConfig({
@@ -40,13 +42,14 @@ export default defineConfig({
     presetApplet({ enable: !isH5 }),
     presetAttributify(),
     presetRemToRpx({ enable: !isH5 }),
+    presetAno(),
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
     // Don't change the following order
-    transformerAttributify(),
-    transformerApplet(),
+    transformerAttributify({ enable: !isH5 }),
+    transformerApplet({ enable: !isH5 }),
   ],
   rules: [
     [

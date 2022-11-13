@@ -1,21 +1,18 @@
 <script setup lang="ts">
-import type { UNotifyOptions } from '../UNotify/types'
-import type { UToastOptions } from '../UToast/types'
+import type { NotifyOptions } from 'ano-ui'
 
 const { darkMode, customBarHeight, statusBarHeight } = storeToRefs(useAppStore())
 const { pageReset } = usePageStore()
 const {
-  showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef, toastRef: _toastRef,
+  showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef,
 } = storeToRefs(usePageStore())
 
 const handleNavigateBack = () => uni.navigateBack({})
 
-const notifyRef = ref<{ handleShowNotify: (options: UNotifyOptions) => {} }>()
-const toastRef = ref<{ handleShowToast: (options: UToastOptions) => {} }>()
+const notifyRef = ref<{ showNotify: (options: NotifyOptions) => {} }>()
 
 onMounted(() => {
   _notifyRef.value = notifyRef.value
-  _toastRef.value = toastRef.value
 })
 
 onUnmounted(() => pageReset())
@@ -50,8 +47,7 @@ onUnmounted(() => pageReset())
           </div>
         </div>
       </div>
-      <UNotify ref="notifyRef" />
-      <UToast ref="toastRef" />
+      <ANotify ref="notifyRef" cc="z-999" />
       <!-- page container -->
       <div
         class="overflow-auto"
