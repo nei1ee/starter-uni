@@ -55,9 +55,9 @@ export function checkStatus(
 
   if (errorMessage) {
     showNotify({
-      type: 'error',
+      color: 'danger',
       duration: 2000,
-      message: errorMessage,
+      content: errorMessage,
     })
   }
 }
