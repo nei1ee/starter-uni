@@ -1,7 +1,6 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@ano-ui/utils': ^0.0.10
   '@antfu/eslint-config': ^0.30.1
   '@dcloudio/types': ^3.0.19
   '@dcloudio/uni-app': 3.0.0-alpha-3060920221111002
@@ -24,7 +23,7 @@ specifiers:
   '@iconify-json/mdi': ^1.1.34
   '@types/lodash-es': ^4.17.6
   '@types/node': ^18.11.9
-  ano-ui: ^0.0.10
+  ano-ui: ^0.0.11
   eslint: ^8.27.0
   lodash-es: ^4.17.21
   pinia: ^2.0.23
@@ -40,7 +39,6 @@ specifiers:
   vue-i18n: ^9.2.2
 
 dependencies:
-  '@ano-ui/utils': 0.0.10_vue@3.2.45
   '@dcloudio/uni-app': 3.0.0-alpha-3060920221111002_lql55jahzhwaqppg67xy5egriy
   '@dcloudio/uni-app-plus': 3.0.0-alpha-3060920221111002_eotw7wv46i2dsek737g4wrvl3q
   '@dcloudio/uni-components': 3.0.0-alpha-3060920221111002
@@ -53,7 +51,7 @@ dependencies:
   '@dcloudio/uni-mp-toutiao': 3.0.0-alpha-3060920221111002_postcss@8.4.19+vue@3.2.45
   '@dcloudio/uni-mp-weixin': 3.0.0-alpha-3060920221111002_postcss@8.4.19+vue@3.2.45
   '@dcloudio/uni-quickapp-webview': 3.0.0-alpha-3060920221111002_postcss@8.4.19+vue@3.2.45
-  ano-ui: 0.0.10_vue@3.2.45
+  ano-ui: 0.0.11_vue@3.2.45
   lodash-es: 4.17.21
   pinia: 2.0.23_zwu2zepfy3m6u2gunxlolp35gi
   vue: 3.2.45
@@ -89,23 +87,23 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.15
 
-  /@ano-ui/components/0.0.10_vue@3.2.45:
-    resolution: {integrity: sha512-DMiqYUWeZtA/i2BUEUpvfiYBnxMuXMloIvSksGlYVGAsRORreKV2mq7GKNXTKZxazZX6+5RKnrSM0Fqy1JRU4w==}
+  /@ano-ui/components/0.0.11_vue@3.2.45:
+    resolution: {integrity: sha512-Wsa0NL1K/bLRgiwPLh5KZmPuwtzkLLocvzMVDCt0XYTOB2vpQuIW8noCTRAKCBZ2Etxe7DWus5l2KiJAafzV9w==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
-      '@ano-ui/utils': 0.0.10_vue@3.2.45
+      '@ano-ui/utils': 0.0.11_vue@3.2.45
       vue: 3.2.45
     dev: false
 
-  /@ano-ui/preset/0.0.10:
-    resolution: {integrity: sha512-4pzGWMhdAXgVUo9yikf1gvQLr5aSlUnJaCTASgsLZHHXFNkDbpe9W8GWnXT2SwFGMsTYcPtEp2thKHLRAvotMQ==}
+  /@ano-ui/preset/0.0.11:
+    resolution: {integrity: sha512-9fbyhbXF5z35dDaS/d4NnIR/6HvWtkg/j3h1eHKNfKrDE3R2l9rRpTWg6iDzb1tOrXWxRYplY/gJoyvLxm+sYg==}
     dependencies:
       '@unocss/preset-mini': 0.46.5
     dev: false
 
-  /@ano-ui/utils/0.0.10_vue@3.2.45:
-    resolution: {integrity: sha512-XLHwBQb3z4kkxD/ebkwfxKIGPLAhrvQnNw+XMYAftPymZzqttPMTBQQG6n08epT/F9QVIC4BrwDNFreHXdwRww==}
+  /@ano-ui/utils/0.0.11_vue@3.2.45:
+    resolution: {integrity: sha512-ft2NQGxdKJXhvwQOe3Jd0HL2DBkyEekV/eGqSU64PzuGtGgO+463uWvE18Rn/zzTG/exmp4f7rb1xZw8zjZORA==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
@@ -1792,14 +1790,14 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /ano-ui/0.0.10_vue@3.2.45:
-    resolution: {integrity: sha512-ug+rCu9VRDV7Cpm1krCQnZTqWhML/ZMF/Ld6MiGoxQyWx1PhnOXMOwRdoheloOmWC50aBI7J5xMzzmX0P54EnA==}
+  /ano-ui/0.0.11_vue@3.2.45:
+    resolution: {integrity: sha512-hNkIasg1OExMcbJqC93UbPVTvTz9jKSChTccaN2VzlXdU5lSAmsI0zCvBI5P4fc/tmJ04gzvPIKKG7BJbfv4yA==}
     peerDependencies:
       vue: ^3.2.0
     dependencies:
-      '@ano-ui/components': 0.0.10_vue@3.2.45
-      '@ano-ui/preset': 0.0.10
-      '@ano-ui/utils': 0.0.10_vue@3.2.45
+      '@ano-ui/components': 0.0.11_vue@3.2.45
+      '@ano-ui/preset': 0.0.11
+      '@ano-ui/utils': 0.0.11_vue@3.2.45
       vue: 3.2.45
     dev: false
 

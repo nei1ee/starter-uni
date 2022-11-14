@@ -47,7 +47,7 @@ onUnmounted(() => pageReset())
           </div>
         </div>
       </div>
-      <ANotify ref="notifyRef" cc="z-999" />
+      <ANotify ref="notifyRef" :cs="{ top: `${customBarHeight}px` }" cc="z-150" />
       <!-- page container -->
       <div
         class="overflow-auto"

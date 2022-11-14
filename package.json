@@ -34,7 +34,6 @@
     "lint:fix": "nr lint --fix"
   },
   "dependencies": {
-    "@ano-ui/utils": "^0.0.10",
     "@dcloudio/uni-app": "3.0.0-alpha-3060920221111002",
     "@dcloudio/uni-app-plus": "3.0.0-alpha-3060920221111002",
     "@dcloudio/uni-components": "3.0.0-alpha-3060920221111002",
@@ -47,7 +46,7 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3060920221111002",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3060920221111002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3060920221111002",
-    "ano-ui": "^0.0.10",
+    "ano-ui": "^0.0.11",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.23",
     "vue": "^3.2.45",
