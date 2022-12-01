@@ -17,6 +17,7 @@ export function checkStatus(
     // Return to the current page after successful login. This step needs to be operated on the login page.
     case 401:
       errorMessage = 'The user does not have permission (token, user name, password error)!'
+      // @ts-expect-error
       // clean token
       break
     case 403:

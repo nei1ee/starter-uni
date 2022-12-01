@@ -15,7 +15,7 @@ import {
 
 import { presetAno } from 'ano-ui'
 
-const isH5 = process.env.UNI_PLATFORM === 'h5'
+const isApplet = process.env?.UNI_PLATFORM?.startsWith('mp')
 
 export default defineConfig({
   shortcuts: {
@@ -35,21 +35,21 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
+    presetApplet({ enable: isApplet }),
     /**
      * you can add `presetAttributify()` here to enable unocss attributify mode prompt
      * although preset is not working for applet, but will generate useless css
      */
-    presetApplet({ enable: !isH5 }),
     presetAttributify(),
-    presetRemToRpx({ enable: !isH5 }),
+    presetRemToRpx({ enable: isApplet }),
     presetAno(),
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
     // Don't change the following order
-    transformerAttributify({ enable: !isH5 }),
-    transformerApplet({ enable: !isH5 }),
+    transformerAttributify({ enable: isApplet }),
+    transformerApplet({ enable: isApplet }),
   ],
   rules: [
     [

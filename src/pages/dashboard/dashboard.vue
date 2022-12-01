@@ -21,14 +21,14 @@ const handleTestApi = async () => {
 
 <template>
   <UBasePage>
-    <div class="p-6" flex="~ col gap2" justify-center>
-      <AButton color="danger" block @click="showNotify({ color: 'danger', content: 'error' })">
+    <div class="p-6">
+      <AButton color="danger" block mt2 @click="showNotify({ color: 'danger', content: 'error' })">
         Show Error Notify
       </AButton>
-      <AButton color="primary" block @click="showNotify({ color: 'primary', content: 'primary' })">
+      <AButton color="primary" block mt2 @click="showNotify({ color: 'primary', content: 'primary' })">
         Show Primary Notify
       </AButton>
-      <AButton cc="bg-orange border-orange" block icon="i-carbon-notification" @click="handleTestApi">
+      <AButton cc="bg-orange border-orange" block mt2 icon="i-carbon-notification" @click="handleTestApi">
         Custom Button
       </AButton>
     </div>

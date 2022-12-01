@@ -81,10 +81,18 @@ export class VRequest {
         success: (res) => {
           const data = res.data as Result
           const _message: string = data?.message ?? ''
-          if (res.statusCode && res.statusCode !== 200) { checkStatus(res.statusCode, _message) }
-          else if (!data) { throw new Error('[HTTP] Request has no return value') }
-          else if (isReturnNativeResponse) { resolve(res as any) }
-          else if (!isTransformResponse) { resolve(res.data as any) }
+          if (res.statusCode && res.statusCode !== 200) {
+            checkStatus(res.statusCode, _message)
+          }
+          else if (!data) {
+            throw new Error('[HTTP] Request has no return value')
+          }
+          else if (isReturnNativeResponse) {
+            resolve(res as any)
+          }
+          else if (!isTransformResponse) {
+            resolve(res.data as any)
+          }
           else {
             //  这里 code，result，message为 后台统一的字段，需要在 types.ts内修改为项目自己的接口返回格式
             // @ts-expect-error
@@ -92,7 +100,9 @@ export class VRequest {
 
             // 这里逻辑可以根据项目进行修改
             const hasSuccess = data && Reflect.has(data, 'code') && (code === ResultEnum.SUCCESS || code === 200)
-            if (hasSuccess) { resolve(result as unknown as Promise<T>) }
+            if (hasSuccess) {
+              resolve(result as unknown as Promise<T>)
+            }
             else {
               let timeoutMsg = ''
               switch (code) {
@@ -105,7 +115,7 @@ export class VRequest {
                   if (message)
                     timeoutMsg = message
               }
-              showNotify({ type: 'error', message: timeoutMsg })
+              showNotify({ color: 'danger', content: timeoutMsg })
               throw new Error(timeoutMsg || 'The interface request failed, please try again later!')
             }
           }
