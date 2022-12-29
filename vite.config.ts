@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import Uni from '@dcloudio/vite-plugin-uni'
 import UnoCSS from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -13,6 +14,20 @@ export default defineConfig({
     },
   },
   plugins: [
+    Components({
+      // allow auto import and register components used in markdown
+      include: [/\.vue$/, /\.vue\?vue/],
+      dts: 'src/components.d.ts',
+      resolvers: [
+        {
+          type: 'component',
+          resolve: (name: string) => {
+            if (name.match(/^A[A-Z]/))
+              return { name, from: `ano-ui/components/${name}/${name}.vue` }
+          },
+        },
+      ],
+    }),
     Uni(),
 
     // https://github.com/antfu/unocss
