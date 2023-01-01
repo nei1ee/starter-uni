@@ -7,4 +7,3 @@ enum Api {
 
 export const loginApi = (params: LoginParams) =>
   defHttp.post<LoginResult>({ url: Api.Login, data: params }, { withToken: false })
-

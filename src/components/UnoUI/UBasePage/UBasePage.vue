@@ -58,4 +58,3 @@ onUnmounted(() => pageReset())
     </div>
   </div>
 </template>
-
