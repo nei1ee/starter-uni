@@ -16,7 +16,7 @@ setTimeout(() => {
 
 <template>
   <UBasePage>
-    <div class="loader absolute top-72vh left-50vw rotate-165deg" />
+    <div class="loader absolute left-50vw top-72vh rotate-165deg" />
   </UBasePage>
 </template>
 

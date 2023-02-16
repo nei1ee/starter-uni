@@ -20,17 +20,17 @@ onUnmounted(() => pageReset())
 
 <template>
   <div :class="darkMode ? 'dark' : ''">
-    <div class="u-bg u-text-color text-base relative">
+    <div class="relative text-base u-bg u-text-color">
       <!-- custom navigation bar -->
       <div
-        v-if="showNavBar" class="bg-primary text-white w-full top-0 z-200 fixed font-bold"
+        v-if="showNavBar" class="fixed top-0 z-200 w-full font-bold text-white bg-primary"
         :style="{ height: `${customBarHeight}px` }"
       >
         <div :style="{ 'padding-top': `${statusBarHeight}px`, 'height': `${customBarHeight - statusBarHeight}px` }">
-          <div class="h-full text-center px-6 relative">
+          <div class="relative h-full px-6 text-center">
             <div
               v-if="showBackAction || showCustomAction"
-              class="flex h-full text-xl left-4 absolute justify-center items-center"
+              class="absolute left-4 h-full flex items-center justify-center text-xl"
             >
               <slot name="navAction">
                 <div
@@ -39,7 +39,7 @@ onUnmounted(() => pageReset())
                 />
               </slot>
             </div>
-            <div class="flex h-full text-lg justify-center items-center">
+            <div class="h-full flex items-center justify-center text-lg">
               <slot name="navContent">
                 {{ pageTitle }}
               </slot>
