@@ -12,8 +12,8 @@ const handleTestApi = async () => {
   const res = await loginApi({ username: 'admin', password: '123456' })
   if (res.token) {
     showNotify({
-      color: 'success',
-      content: '登录成功',
+      type: 'success',
+      message: '登录成功',
     })
   }
 }
@@ -22,20 +22,20 @@ const handleTestApi = async () => {
 <template>
   <UBasePage>
     <div class="p-6">
-      <AButton color="danger" block mt2 @click="showNotify({ color: 'danger', content: 'error' })">
+      <AButton type="danger" block mt2 @click="showNotify({ type: 'danger', message: 'error' })">
         Show Error Notify
       </AButton>
-      <AButton color="primary" block mt2 @click="showNotify({ color: 'primary', content: 'primary' })">
+      <AButton type="primary" block mt2 @click="showNotify({ type: 'primary', message: 'primary' })">
         Show Primary Notify
       </AButton>
-      <AButton cc="bg-orange border-orange" block mt2 icon="i-carbon-notification" @click="handleTestApi">
+      <AButton cc="bg-light-blue border-none" block mt2 icon="i-carbon-notification" @click="handleTestApi">
         Custom Button
       </AButton>
     </div>
-    <div class="bg-base-second m-6 rounded-lg p-6 border-base">
+    <div class="u-bg-2 m-6 rounded-lg p-6">
       <div class="text-center">
         abcdefghijklmnopqrstuvwxyz
-        <div class="color-base-second" text="red right" p-2>
+        <div class="u-text-color-2" text="red right" p-2>
           1234567890
         </div>
       </div>

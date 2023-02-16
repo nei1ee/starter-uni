@@ -20,7 +20,7 @@ onUnmounted(() => pageReset())
 
 <template>
   <div :class="darkMode ? 'dark' : ''">
-    <div class="bg-base color-base text-base relative">
+    <div class="u-bg u-text-color text-base relative">
       <!-- custom navigation bar -->
       <div
         v-if="showNavBar" class="bg-primary text-white w-full top-0 z-200 fixed font-bold"

@@ -1,6 +1,4 @@
-<br>
-<h2 align="center">Starter Uni</h2>
-<br>
+# Starter Uni
 
 ## Features
 
