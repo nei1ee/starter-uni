@@ -15,9 +15,7 @@ export default defineConfig({
   },
   plugins: [
     Components({
-      include: [/\.vue$/, /\.vue\?vue/],
       dts: 'src/components.d.ts',
-      resolvers: [],
     }),
     Uni(),
 

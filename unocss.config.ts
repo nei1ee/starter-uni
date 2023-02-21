@@ -51,7 +51,7 @@ export default defineConfig({
     transformerDirectives(),
     transformerVariantGroup(),
     // Don't change the following order
-    transformerAttributify(),
+    transformerAttributify({ ignoreAttributes: ['block'] }),
     transformerApplet(),
   ],
   rules: [
