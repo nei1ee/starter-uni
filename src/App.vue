@@ -8,7 +8,7 @@ onLaunch(() => {
   darkMode.value = systemInfo?.theme === 'dark'
   statusBarHeight.value = systemInfo!.statusBarHeight || 44
   menuButtonBounding.value = uni.getMenuButtonBoundingClientRect()
-  uni.onThemeChange((res: UniApp.OnThemeChangeCallbackResult) => darkMode.value = res.theme === 'dark')
+  uni.onThemeChange(res => darkMode.value = res.theme === 'dark')
   // #endif
 
   // #ifdef H5
