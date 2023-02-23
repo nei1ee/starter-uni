@@ -9,7 +9,7 @@ onShow(() => {
 
 setTimeout(() => {
   uni.redirectTo({
-    url: '/pages/dashboard/dashboard',
+    url: '/pages/dashboard',
   })
 }, 500)
 </script>
