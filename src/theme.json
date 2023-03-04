@@ -1,12 +1,12 @@
 {
   "dark": {
-    "bgColor": "#222222",
-    "bgColorBottom": "#222222",
-    "bgColorTop": "#222222",
+    "bgColor": "#000",
+    "bgColorBottom": "#000",
+    "bgColorTop": "#000",
     "bgTxtStyle": "light",
-    "navBgColor": "#222222",
+    "navBgColor": "#000",
     "navTxtStyle": "white",
-    "tabBgColor": "#222222",
+    "tabBgColor": "#000",
     "tabBorderStyle": "white"
   },
   "light": {

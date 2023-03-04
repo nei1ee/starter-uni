@@ -20,11 +20,17 @@ export const useAppStore = defineStore(
         ? 0
         : menuButtonBounding.value.bottom + menuButtonBounding.value.top - statusBarHeight.value)
 
+    const isH5 = ref(false)
+    // #ifdef H5
+    isH5.value = true
+    // #endif
+
     return {
       darkMode,
       statusBarHeight,
       customBarHeight,
       menuButtonBounding,
+      isH5,
     }
   })
 

@@ -25,3 +25,21 @@ onShow(() => {
 onHide(() => {
 })
 </script>
+
+<style>
+body,
+page,
+a-color-base {
+  background-color: rgba(243, 244, 246, 1);
+  height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  body,
+  page,
+  a-color-base {
+    background-color: #000;
+    height: 100%;
+  }
+}
+</style>

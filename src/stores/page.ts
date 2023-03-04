@@ -14,18 +14,11 @@ export const usePageStore = defineStore('page', () => {
   const pageTitle = ref('')
   const notifyRef = ref<{ showNotify: (options: NotifyOptions) => {} }>()
 
-  const setPageConfig = (config: PageConfig) => {
-    const {
-      showNavBar: _showNavBar = true,
-      showBackAction: _showBackAction = false,
-      showCustomAction: _showCustomAction = false,
-      pageTitle: _pageTitle = '',
-    } = config
-
-    showNavBar.value = _showNavBar
-    showBackAction.value = _showBackAction
-    showCustomAction.value = _showCustomAction
-    pageTitle.value = _pageTitle
+  const setPageConfig = (config: PageConfig = {}) => {
+    showNavBar.value = config.showNavBar ?? true
+    showBackAction.value = config.showBackAction ?? false
+    showCustomAction.value = config.showCustomAction ?? false
+    pageTitle.value = config.pageTitle ?? ''
   }
 
   const showNotify = (options: NotifyOptions) =>
