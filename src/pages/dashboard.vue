@@ -8,7 +8,7 @@ onShow(() => {
     pageTitle: 'Dashboard',
   })
 })
-const handleTestApi = async () => {
+async function handleTestApi() {
   const res = await loginApi({ username: 'admin', password: '123456' })
   if (res.token) {
     showNotify({
@@ -35,7 +35,7 @@ const handleTestApi = async () => {
     <div class="m-6 rounded-lg p-6 u-bg-2">
       <div class="text-center">
         abcdefghijklmnopqrstuvwxyz
-        <div class="u-text-color-2" text="red right" p-2>
+        <div class="u-text-color-2" text="red right" p-2 size="10">
           1234567890
         </div>
       </div>

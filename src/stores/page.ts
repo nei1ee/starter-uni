@@ -1,5 +1,6 @@
 import type { NotifyOptions } from 'ano-ui'
 import { pinia } from '~/modules/pinia'
+
 interface PageConfig {
   showNavBar?: boolean
   showBackAction?: boolean

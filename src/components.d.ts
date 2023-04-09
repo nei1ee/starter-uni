@@ -11,6 +11,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AButton: typeof import('ano-ui/components/AButton/AButton.vue')['default']
     ANotify: typeof import('ano-ui/components/ANotify/ANotify.vue')['default']
-    UBasePage: typeof import('./components/UnoUI/UBasePage/UBasePage.vue')['default']
+    UBasePage: typeof import('./components/UBasePage.vue')['default']
   }
 }

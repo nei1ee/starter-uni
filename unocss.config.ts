@@ -1,21 +1,25 @@
-import {
-  defineConfig,
-  presetAttributify,
-  presetIcons,
-  transformerDirectives,
-  transformerVariantGroup,
-} from 'unocss'
+import type { Preset, SourceCodeTransformer } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, transformerDirectives, transformerVariantGroup } from 'unocss'
 
-import {
-  presetApplet,
-  presetRemRpx,
-  transformerApplet,
-  transformerAttributify,
-} from 'unocss-applet'
+import { presetApplet, presetRemRpx, transformerApplet, transformerAttributify } from 'unocss-applet'
 
 import { presetAno } from 'ano-ui'
 
-const isApplet = process.env?.UNI_PLATFORM?.startsWith('mp')
+const isApplet = process.env?.UNI_PLATFORM?.startsWith('mp') ?? false
+const presets: Preset[] = []
+const transformers: SourceCodeTransformer[] = []
+
+if (isApplet) {
+  presets.push(presetApplet())
+  presets.push(presetRemRpx())
+  transformers.push(transformerAttributify({ ignoreAttributes: ['block'] }))
+  transformers.push(transformerApplet())
+}
+else {
+  presets.push(presetApplet())
+  presets.push(presetAttributify())
+  presets.push(presetRemRpx({ mode: 'rpx2rem' }))
+}
 
 export default defineConfig({
   shortcuts: {
@@ -38,28 +42,19 @@ export default defineConfig({
         'vertical-align': 'middle',
       },
     }),
-    presetApplet({ enable: isApplet }),
     /**
      * you can add `presetAttributify()` here to enable unocss attributify mode prompt
      * although preset is not working for applet, but will generate useless css
      */
-    presetAttributify(),
-    presetRemRpx({ mode: isApplet ? 'rem2rpx' : 'rpx2rem' }),
+    ...presets,
     presetAno(),
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-    // Don't change the following order
-    transformerAttributify({ ignoreAttributes: ['block'] }),
-    transformerApplet(),
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup(), ...transformers],
   rules: [
     [
       'p-safe',
       {
-        padding:
-          'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)',
+        padding: 'env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)',
       },
     ],
     ['pt-safe', { 'padding-top': 'env(safe-area-inset-top)' }],

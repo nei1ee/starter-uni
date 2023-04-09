@@ -7,7 +7,9 @@ const {
   showNavBar, showBackAction, showCustomAction, pageTitle, notifyRef: _notifyRef,
 } = storeToRefs(usePageStore())
 
-const handleNavigateBack = () => uni.navigateBack({})
+function handleNavigateBack() {
+  return uni.navigateBack({})
+}
 
 const notifyRef = ref<{ showNotify: (options: NotifyOptions) => {} }>()
 
