@@ -1,5 +1,7 @@
 # Starter Uni
 
+please use [vitesse-uni-app](https://github.com/uni-helper/vitesse-uni-app)!!!
+
 ## Features
 
 - ⚡️ [Vue 3](https://github.com/vuejs/vue-next), [Vite 2](https://github.com/vitejs/vite), [pnpm](https://pnpm.js.org/) - born with fastness
